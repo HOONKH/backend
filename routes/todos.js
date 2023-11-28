@@ -22,7 +22,7 @@ router.post("/", (req, res) => {
 
   todos.push(newTodo);
 
-  return res.json({ todo: newTodo });
+  return res.json({ todo: newTodo }); // appthunk의 creatTodo로 감
 });
 // todos 현재 경로이기 때문에 '/'
 //  응답은 return으로

@@ -1,11 +1,19 @@
 const express = require("express");
 const todosRouter = require("./routes/todos");
+const cors = require("cors");
 // 리액트와 같이 임포트 하는 방법
 
 const app = express();
 
 const port = 3010;
 
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:3000",
+    // cors 설정
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // 바디 파서.json형식으로  **필수
